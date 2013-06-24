@@ -1,6 +1,5 @@
 final int NUM_PARTICLES = 4;
 Particle[] particles = new Particle[NUM_PARTICLES];
-boolean recording = false;
 
 PImage backgroundImg;
 
@@ -39,14 +38,10 @@ void draw(){
     particles[i].move();
     particles[i].bound();
   }
-
-  if (recording == true) {
-    saveFrame("output/frame-####.png");
-  }
 }
 void keyPressed() {
   if (key == 'r') {
-    recording = (!recording);
+    saveFrame("output/frame-####.png");
   }
 }
 
